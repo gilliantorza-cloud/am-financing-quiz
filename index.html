@@ -8,14 +8,10 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f4f6f9; min-height: 100vh; padding: 24px 16px; }
   .shell { max-width: 680px; margin: 0 auto; }
-
   header { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
-  header img { height: 32px; }
   header .title { font-size: 15px; font-weight: 600; color: #1B2B4B; }
   header .sub { font-size: 12px; color: #888; margin-top: 2px; }
-
   .card { background: #fff; border-radius: 12px; border: 0.5px solid #e0e0e0; padding: 24px; }
-
   .progress-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
   .q-count { font-size: 12px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.06em; }
   .pips { display: flex; gap: 3px; }
@@ -23,12 +19,9 @@
   .pip.done-correct { background: #3B6D11; }
   .pip.done-wrong { background: #A32D2D; }
   .pip.current { background: #185FA5; }
-
   .cat-badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 4px; margin-bottom: 12px; }
-
   .scenario { background: #FAEEDA; color: #633806; border-radius: 8px; padding: 14px 16px; font-size: 14px; line-height: 1.65; margin-bottom: 16px; }
   .prompt { font-size: 13px; font-weight: 600; color: #888; margin-bottom: 10px; }
-
   .choice { display: flex; gap: 10px; align-items: flex-start; width: 100%; text-align: left; background: #fff; border: 0.5px solid #ddd; border-radius: 8px; padding: 11px 14px; font-size: 14px; color: #222; cursor: pointer; margin-bottom: 8px; line-height: 1.5; transition: background 0.12s; }
   .choice:hover { background: #f8f8f8; }
   .choice.correct { background: #EAF3DE; border: 1.5px solid #3B6D11; cursor: default; }
@@ -37,7 +30,6 @@
   .choice-label { width: 20px; height: 20px; border-radius: 50%; background: #f0f0f0; color: #aaa; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
   .choice.correct .choice-label { background: #3B6D11; color: #fff; }
   .choice.wrong .choice-label { background: #A32D2D; color: #fff; }
-
   .feedback-box { border-radius: 8px; padding: 14px 16px; margin-bottom: 14px; }
   .feedback-box.correct { background: #EAF3DE; border: 0.5px solid #C0DD97; }
   .feedback-box.wrong { background: #FCEBEB; border: 0.5px solid #F7C1C1; }
@@ -46,21 +38,37 @@
   .better-answer { margin-top: 10px; padding-top: 10px; border-top: 0.5px solid #ddd; }
   .better-label { font-size: 11px; font-weight: 600; color: #3B6D11; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
   .better-text { font-size: 13px; color: #333; line-height: 1.5; }
-
   .btn { background: #185FA5; border: none; border-radius: 6px; padding: 10px 22px; font-size: 14px; color: #fff; cursor: pointer; font-weight: 600; margin-top: 4px; }
-  .btn:hover { background: #1350880; }
+  .btn:hover { background: #134e8a; }
+  .btn:disabled { background: #aac4e0; cursor: default; }
   .btn-outline { background: transparent; border: 0.5px solid #ccc; border-radius: 6px; padding: 9px 20px; font-size: 13px; color: #666; cursor: pointer; margin-top: 14px; }
   .btn-outline:hover { background: #f5f5f5; }
-
-  /* Results */
   .score-num { font-size: 40px; font-weight: 700; color: #1B2B4B; margin-bottom: 6px; }
   .grade-badge { display: inline-block; font-size: 13px; font-weight: 600; padding: 5px 14px; border-radius: 6px; margin-bottom: 22px; }
   .divider { border: none; border-top: 0.5px solid #eee; margin: 18px 0; }
   .miss-card { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 0.5px solid #f0f0f0; }
   .miss-scenario { font-size: 13px; color: #333; line-height: 1.5; margin-bottom: 7px; }
-  .miss-chose { background: #FCEBEB; border-radius: 6px; padding: 7px 10px; font-size: 12px; color: #A32D2D; margin-bottom: 5px; }
   .miss-best { background: #EAF3DE; border-radius: 6px; padding: 7px 10px; font-size: 12px; color: #3B6D11; }
   .section-title { font-size: 13px; font-weight: 600; color: #1B2B4B; margin-bottom: 12px; }
+
+  /* Start screen */
+  .start-title { font-size: 20px; font-weight: 700; color: #1B2B4B; margin-bottom: 8px; }
+  .start-desc { font-size: 14px; color: #555; line-height: 1.65; margin-bottom: 20px; }
+  .start-meta { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+  .start-meta-item { font-size: 13px; color: #888; }
+  .start-meta-item strong { color: #1B2B4B; }
+  label { display: block; font-size: 13px; font-weight: 600; color: #555; margin-bottom: 6px; }
+  input[type="text"], input[type="email"] { width: 100%; border: 0.5px solid #ddd; border-radius: 8px; padding: 10px 14px; font-size: 14px; color: #222; margin-bottom: 14px; outline: none; }
+  input[type="text"]:focus, input[type="email"]:focus { border-color: #185FA5; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 480px) { .field-row { grid-template-columns: 1fr; } }
+
+  /* Submission area */
+  .submit-section { background: #f8f9fb; border: 0.5px solid #e0e0e0; border-radius: 8px; padding: 16px; margin-top: 16px; }
+  .submit-section p { font-size: 13px; color: #555; margin-bottom: 12px; line-height: 1.5; }
+  .submit-status { font-size: 13px; margin-top: 10px; padding: 8px 12px; border-radius: 6px; }
+  .submit-status.success { background: #EAF3DE; color: #3B6D11; }
+  .submit-status.error { background: #FCEBEB; color: #A32D2D; }
 </style>
 </head>
 <body>
@@ -75,318 +83,92 @@
 </div>
 
 <script>
+// -------------------------------------------------------
+// REPLACE THIS WITH YOUR FORMSPREE ENDPOINT
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xbdpblnd";
+// -------------------------------------------------------
+
 const CAT = {
-  "stripe": { label: "Product Knowledge — Stripe", bg: "#E6F1FB", color: "#0C447C" },
-  "pipe": { label: "Product Knowledge — Pipe", bg: "#E1F5EE", color: "#085041" },
-  "fundbox": { label: "Product Knowledge — Fundbox", bg: "#EAF3DE", color: "#3B6D11" },
-  "compare": { label: "Comparing Products", bg: "#F1EFE8", color: "#444441" },
-  "approval": { label: "Do's & Don'ts — Approval Language", bg: "#FAEEDA", color: "#633806" },
-  "lender": { label: "Do's & Don'ts — Lender Identity", bg: "#FAEEDA", color: "#633806" },
-  "funds": { label: "Do's & Don'ts — Use of Funds", bg: "#FAEEDA", color: "#633806" },
-  "pressure": { label: "Do's & Don'ts — Pressure & Amount", bg: "#FAEEDA", color: "#633806" },
-  "credit": { label: "Do's & Don'ts — Credit Promises", bg: "#FAEEDA", color: "#633806" },
-  "natural": { label: "Do's & Don'ts — Natural Conversation", bg: "#FAEEDA", color: "#633806" },
-  "role": { label: "Do's & Don'ts — Role Clarity", bg: "#FAEEDA", color: "#633806" },
+  "stripe":   { label: "Product Knowledge — Stripe",   bg: "#E6F1FB", color: "#0C447C" },
+  "pipe":     { label: "Product Knowledge — Pipe",     bg: "#E1F5EE", color: "#085041" },
+  "fundbox":  { label: "Product Knowledge — Fundbox",  bg: "#EAF3DE", color: "#3B6D11" },
+  "compare":  { label: "Comparing Products",            bg: "#F1EFE8", color: "#444441" },
+  "approval": { label: "Do's & Don'ts — Approval Language",    bg: "#FAEEDA", color: "#633806" },
+  "lender":   { label: "Do's & Don'ts — Lender Identity",      bg: "#FAEEDA", color: "#633806" },
+  "funds":    { label: "Do's & Don'ts — Use of Funds",         bg: "#FAEEDA", color: "#633806" },
+  "pressure": { label: "Do's & Don'ts — Pressure & Amount",    bg: "#FAEEDA", color: "#633806" },
+  "natural":  { label: "Do's & Don'ts — Natural Conversation", bg: "#FAEEDA", color: "#633806" },
+  "role":     { label: "Do's & Don'ts — Role Clarity",         bg: "#FAEEDA", color: "#633806" },
+  "credit":   { label: "Do's & Don'ts — Credit Promises",      bg: "#FAEEDA", color: "#633806" },
 };
 
 const Qs = [
-  {
-    cat: "stripe",
-    scenario: "A Pro with a Stripe Flex Loan asks: \"What happens if my sales are slow and I don't hit my minimum payment?\"",
-    correct: 1,
-    choices: [
-      "There's no minimum — you just pay whatever percentage comes through naturally.",
-      "Stripe will automatically debit the remaining minimum from your linked bank account at the end of the period.",
-      "Your loan will go into default and Stripe will contact you.",
-      "Nothing happens — the minimum just carries over to the next period.",
-    ],
-    feedback: [
-      { title: "Incorrect — that describes the MCA.", body: "The MCA has no minimums. The Flex Loan does have minimums per period, and there is a consequence for not meeting them." },
-      { title: "Correct.", body: "For Stripe Flex Loans, if per-transaction withholdings don't cover the minimum, Stripe will automatically debit the remaining amount from the linked bank account at end of period. Important for setting accurate expectations." },
-      { title: "Too strong.", body: "A missed minimum doesn't trigger default — Stripe automatically debits the shortfall from the linked bank account. Calling it a default overstates the consequence." },
-      { title: "Incorrect.", body: "Minimums don't carry over. Stripe debits the shortfall from the linked bank account at the end of the minimum payment period." },
-    ],
-  },
-  {
-    cat: "stripe",
-    scenario: "A Pro asks: \"Will applying for Stripe Capital hurt my credit score?\"",
-    correct: 2,
-    choices: [
-      "No, Stripe Capital never does any kind of credit check.",
-      "Yes, applying will show up as a hard inquiry on your credit.",
-      "Applying won't affect your credit score — but in some circumstances a check may occur, and you'll be notified if that happens.",
-      "It depends on your credit score. If it's above 600, no impact.",
-    ],
-    feedback: [
-      { title: "Too absolute — avoid this.", body: "While applying typically doesn't impact credit, Stripe Capital states a check might occur under some circumstances. Never make blanket guarantees about credit." },
-      { title: "Incorrect.", body: "Applying for Stripe Capital does not result in a hard inquiry that hurts your score. Even if a check occurs, it does not affect the personal credit score." },
-      { title: "Correct.", body: "Applying might include a personal credit check under some circumstances, but this does not affect the personal credit score. If a check is required, the Pro will be notified during the application." },
-      { title: "Incorrect.", body: "Stripe Capital's qualification isn't based on a credit score threshold. A check may happen in some circumstances regardless, and it won't affect their score either way." },
-    ],
-  },
-  {
-    cat: "pipe",
-    scenario: "A Pro asks: \"What makes Pipe different from Stripe Capital?\"",
-    correct: 0,
-    choices: [
-      "Pipe is a revenue-based cash advance with multi-draw flexibility — you can access as much or as little of your offer as needed, and payments are a percentage of revenue debited from your bank account.",
-      "Pipe is a revolving line of credit, similar to a business credit card.",
-      "Pipe is identical to Stripe Capital — both are flat-fee working capital products.",
-      "Pipe requires a credit check and personal guarantee, unlike Stripe.",
-    ],
-    feedback: [
-      { title: "Correct.", body: "Pipe is a revenue-based MCA with multi-draw flexibility. You access what you need, payments scale with revenue, and there are no credit checks or personal collateral required." },
-      { title: "That describes Fundbox.", body: "A revolving line of credit is Fundbox's product. Pipe is a revenue-based cash advance — not revolving credit." },
-      { title: "Incorrect.", body: "While both have flat fees and revenue-based repayment, Pipe is a cash advance (MCA) with multi-draw capability, while Stripe offers loans and MCAs with different structures." },
-      { title: "Incorrect.", body: "Pipe explicitly has no credit checks and no personal collateral. Approval is based purely on business revenue data." },
-    ],
-  },
-  {
-    cat: "pipe",
-    scenario: "A Pro with a $100k Pipe offer only wants to take $40k. Can they do that?",
-    correct: 1,
-    choices: [
-      "No — Pipe requires you to take the full offer amount at once.",
-      "Yes — Pipe lets you draw as much or as little as you need. Your payment rate adjusts to match the amount you advance.",
-      "Yes — but only if you draw at least 50% of the offer.",
-      "It depends on whether the offer has expired.",
-    ],
-    feedback: [
-      { title: "Incorrect.", body: "Pipe does not require taking the full offer. One of its key advantages is flexibility — you draw what you need, and fees and payment rates adjust accordingly." },
-      { title: "Correct.", body: "Pipe lets you advance as much or as little as you want. For example, with a $100k limit at 10%, if you only take $50k your rate adjusts to 5%. This flexibility is a strong selling point." },
-      { title: "Incorrect.", body: "There is no minimum draw requirement. The Pro can take any amount up to their offer limit." },
-      { title: "Partially true but misleading.", body: "Offers do expire, but that's not what determines whether partial draws are allowed. Partial draws are always allowed while the offer is active." },
-    ],
-  },
-  {
-    cat: "pipe",
-    scenario: "A Pro with a Pipe offer asks: \"Does Pipe do a credit check, and will it affect me if I apply?\"",
-    correct: 2,
-    choices: [
-      "Yes, Pipe runs a soft credit check during the application — but it won't affect your score.",
-      "It depends on your state and business history.",
-      "No — Pipe does not do any credit checks and requires no personal guarantee. Offers are based purely on your business revenue data.",
-      "There's no credit check to apply, but there is a hard pull when you draw funds for the first time.",
-    ],
-    feedback: [
-      { title: "Incorrect.", body: "Pipe does not run any credit check — not soft, not hard. This is a key differentiator worth knowing and sharing confidently." },
-      { title: "Incorrect.", body: "Pipe's FAQ makes no mention of state-based variation. There is simply no credit check, regardless of location or business history." },
-      { title: "Correct.", body: "Pipe has no credit checks and no personal guarantees. Offers are based purely on business revenue data — historical transactions, projected revenue, and payment processing volume." },
-      { title: "That describes Fundbox, not Pipe.", body: "The hard-pull-at-first-draw structure applies to Fundbox. Pipe has no credit check of any kind." },
-    ],
-  },
-  {
-    cat: "fundbox",
-    scenario: "A Pro asks what kind of product Fundbox offers. Which best describes it?",
-    correct: 1,
-    choices: [
-      "A flat-fee cash advance based on your HCP payment history.",
-      "A revolving line of credit — you draw what you need, repay in weekly installments, and available credit replenishes as you pay.",
-      "A fixed term loan with monthly payments over 12 or 24 months.",
-      "A revenue-based advance with no set repayment schedule.",
-    ],
-    feedback: [
-      { title: "That describes Stripe/Pipe.", body: "Fundbox is not a cash advance. It is a revolving line of credit — a meaningfully different product structure." },
-      { title: "Correct.", body: "Fundbox is a revolving line of credit. You draw funds as needed, repay in weekly installments over 12 or 24 weeks, and as you repay, that credit becomes available again. No origination fees, no prepayment penalties." },
-      { title: "Close but incorrect details.", body: "Fundbox repayment is weekly installments over 12 or 24 weeks — not monthly payments over 12 or 24 months. The timeframes are weeks, not months." },
-      { title: "That describes Pipe.", body: "Revenue-based repayment with no fixed schedule is Pipe's structure. Fundbox has a structured weekly repayment schedule." },
-    ],
-  },
-  {
-    cat: "fundbox",
-    scenario: "A Pro asks about Fundbox eligibility. What are the ideal eligibility requirements you'd share with them?",
-    correct: 0,
-    choices: [
-      "Fundbox looks for 6+ months in business, $100k+ in annual revenue, and a personal credit score above 600.",
-      "Fundbox only looks at HCP payment volume — no credit score needed.",
-      "Fundbox requires 12+ months in business and $250k in annual revenue.",
-      "There are no stated eligibility requirements — any Pro can apply.",
-    ],
-    feedback: [
-      { title: "Correct.", body: "Fundbox's ideal candidate has 6+ months in business, $100,000+ in annual revenue, and a personal credit score above 600. Unlike Stripe and Pipe, Fundbox does consider personal credit — important context when routing Pros." },
-      { title: "Incorrect.", body: "Unlike Stripe and Pipe, Fundbox does factor in personal credit score (600+). This is an important distinction when routing Pros to the right product." },
-      { title: "Incorrect thresholds.", body: "The stated requirements are 6+ months (not 12+) and $100k in annual revenue (not $250k). Getting this wrong could discourage an eligible Pro from applying." },
-      { title: "Incorrect.", body: "Fundbox does have stated eligibility criteria. Knowing them helps set accurate expectations and route the right Pros to the right product." },
-    ],
-  },
-  {
-    cat: "fundbox",
-    scenario: "A Pro considering applying for a Fundbox line of credit asks: \"Will applying impact my credit score?\"",
-    correct: 2,
-    choices: [
-      "Yes, Fundbox runs a hard credit inquiry at application.",
-      "No, there are no credit inquiries of any kind with Fundbox.",
-      "Applying does not impact your credit score. However, Fundbox will make a one-time hard credit inquiry the first time you draw funds.",
-      "It depends on your credit score — if it's above 700, no hard pull is needed.",
-    ],
-    feedback: [
-      { title: "Incorrect.", body: "Applying itself does not impact credit. The hard inquiry happens later — specifically the first time the Pro draws funds." },
-      { title: "Incomplete.", body: "There is a hard credit inquiry — but it happens at first draw, not at application. The distinction matters and should be shared accurately." },
-      { title: "Correct.", body: "Applying does not impact credit score. Fundbox makes a one-time hard credit inquiry only when funds are drawn for the first time. Be precise about when this happens — it matters to the Pro." },
-      { title: "Incorrect.", body: "Fundbox's FAQ does not tie the hard pull to a credit score threshold. The trigger is drawing funds for the first time, regardless of score." },
-    ],
-  },
-  {
-    cat: "fundbox",
-    scenario: "How quickly can a Pro expect a credit decision from Fundbox after applying?",
-    correct: 1,
-    choices: [
-      "Within 1-2 business days, same as Stripe.",
-      "As few as 3 minutes, with funds available as soon as the next business day if approved.",
-      "Fundbox typically takes 24-48 hours for a credit decision.",
-      "Instantly — Fundbox approvals are automated and immediate.",
-    ],
-    feedback: [
-      { title: "Incorrect.", body: "1-2 business days is Stripe Capital's fund delivery timeframe, not Fundbox's decision time. Fundbox makes credit decisions in as few as 3 minutes." },
-      { title: "Correct.", body: "Fundbox makes credit decisions in as few as 3 minutes, with funds available as soon as the next business day if approved. Speed is one of Fundbox's key advantages." },
-      { title: "Incorrect.", body: "Fundbox is faster than 24-48 hours — decisions can come in as few as 3 minutes. Misstating this undersells a key benefit." },
-      { title: "Overstates it.", body: "While Fundbox is fast (as few as 3 minutes), calling it instant is inaccurate. Funds also aren't available immediately — they can arrive as soon as the next business day." },
-    ],
-  },
-  {
-    cat: "compare",
-    scenario: "A Pro doesn't have a Stripe or Pipe offer. What should you tell them about their options?",
-    correct: 2,
-    choices: [
-      "They're out of luck until they receive a Stripe or Pipe offer — those are the primary products.",
-      "They should wait and check back in 30 days when offers refresh.",
-      "Fundbox is available to any Pro who applies and meets eligibility criteria — it doesn't require a prequalified offer like Stripe or Pipe.",
-      "They need to increase their HCP payment volume before any offer will appear.",
-    ],
-    feedback: [
-      { title: "Incorrect and unhelpful.", body: "Fundbox is specifically positioned for Pros who don't have a Stripe or Pipe offer. Telling a Pro they're out of luck misses a live option." },
-      { title: "Misleading.", body: "Stripe offers expire after 30 days and are automatically re-evaluated, but this doesn't apply to Fundbox, which any eligible Pro can apply for proactively." },
-      { title: "Correct.", body: "Fundbox is available to any Pro who doesn't have a Stripe/Pipe offer but still needs capital. It's the proactive-apply option — no prequalified offer required." },
-      { title: "Partially true but not actionable.", body: "While payment volume does affect Stripe/Pipe eligibility, a Pro doesn't have to wait — they can apply for Fundbox now if they meet the criteria." },
-    ],
-  },
-  {
-    cat: "approval",
-    scenario: "A Pro with a Stripe/Pipe offer says: \"Wait, so I'm already approved?\" You respond...",
-    correct: 0,
-    choices: [
-      "You're prequalified for up to $XXXX — meaning you're eligible to apply, but final approval happens after you submit the application.",
-      "Yes, you're approved for $XXXX. You just need to accept.",
-      "You're approved pending a few verification steps.",
-      "Think of it as approved — they just need to confirm a few details.",
-    ],
-    feedback: [
-      { title: "Correct.", body: "Pros are prequalified, not approved. Final approval happens after application. Using approved language when they aren't yet is inaccurate and a compliance risk." },
-      { title: "Never say this.", body: "Pros are not currently approved — they still need to apply and receive final approval. Saying 'you're approved' when they aren't is a compliance violation." },
-      { title: "Still too strong.", body: "'Approved pending verification' still implies approval has already occurred. Use prequalified language to set accurate expectations." },
-      { title: "Avoid this framing.", body: "Telling a Pro to 'think of it as approved' is misleading. They are not approved. Use precise language: prequalified, eligible to apply, subject to final approval." },
-    ],
-  },
-  {
-    cat: "lender",
-    scenario: "A Pro asks: \"Is HCP the one giving me this money?\"",
-    correct: 1,
-    choices: [
-      "Yes, HCP built these financing products into the platform for you.",
-      "No — HCP is neither the lender nor broker. This offer is through HCP's partnership with [Stripe Capital / Pipe / Fundbox]. Our partnership is what makes the offer available to you.",
-      "HCP works with financial partners to offer you money through the app.",
-      "Sort of — HCP and the partner split the financing.",
-    ],
-    feedback: [
-      { title: "Incorrect and non-compliant.", body: "HCP is neither the lender nor broker. Implying HCP built or owns the financing product misrepresents the relationship and is a compliance issue." },
-      { title: "Correct.", body: "HCP is neither the lender nor broker — it's the partner relationship that makes the offer available. Always name the actual lender: Stripe Capital, Pipe, or Fundbox." },
-      { title: "Too vague.", body: "This avoids saying HCP is the lender, which is good. But it doesn't name the actual lender. Pros deserve to know exactly who they're working with." },
-      { title: "Incorrect.", body: "HCP and the partner do not split the financing. HCP is not a lender at all. The partner (Stripe, Pipe, or Fundbox) is the sole source of capital." },
-    ],
-  },
-  {
-    cat: "funds",
-    scenario: "A Pro asks: \"Can I use this to pay off some personal debt?\"",
-    correct: 2,
-    choices: [
-      "Sure — it's flexible working capital, you can use it however you need.",
-      "Probably fine, as long as it's a small amount.",
-      "No — these funds are specifically for business use only. You can use them for things like equipment, payroll, or managing cash flow.",
-      "That's a question for the lender — I'd check with Stripe/Pipe/Fundbox directly.",
-    ],
-    feedback: [
-      { title: "Incorrect — avoid this.", body: "These funds are strictly for business purposes. Telling a Pro they can use them for personal debt is inaccurate and potentially harmful." },
-      { title: "Never say this.", body: "There is no 'small amount' exception. Business financing is for business use only, full stop." },
-      { title: "Correct.", body: "Business financing can only be used for business purposes — equipment, hiring, inventory, cash flow, etc. Never suggest personal use is acceptable, and be direct when a Pro asks." },
-      { title: "Passes the buck unnecessarily.", body: "You know the answer here — business use only. Deferring to the lender for a basic use-of-funds question makes you seem uninformed and doesn't protect the Pro." },
-    ],
-  },
-  {
-    cat: "pressure",
-    scenario: "A Pro says: \"I'm not sure I need the full amount.\" You say...",
-    correct: 1,
-    choices: [
-      "You should really take the full amount — it's there and there's no cost to having it available.",
-      "That's completely fine — you can take up to $XXXX, or less if you choose. It's entirely your call.",
-      "I'd take the full amount just in case — you never know when you'll need extra cash.",
-      "The offer amount was set based on your revenue, so it's probably the right amount for your business.",
-    ],
-    feedback: [
-      { title: "Never say this.", body: "Pressuring a Pro to take the full amount is explicitly against program rules. Your role is to inform, not to push a dollar amount." },
-      { title: "Correct.", body: "Pros are never required to take the full offer and should never be pressured to. Make clear the decision — including how much to take — is entirely theirs." },
-      { title: "Never say this.", body: "Recommending they take more than they need puts your interests over theirs and violates the spirit of the program. Never advise the Pro on what amount to take." },
-      { title: "Subtle pressure — avoid it.", body: "Framing the offer amount as what's right for their business is a soft push. You don't know what's right for their business. Let them decide without steering." },
-    ],
-  },
-  {
-    cat: "natural",
-    scenario: "You're nearing the end of a routine check-in call. The Pro hasn't mentioned money at all. You notice they have an open Stripe offer. What do you do?",
-    correct: 2,
-    choices: [
-      "Lead the next call with the financing offer — give it dedicated focus so the Pro takes it seriously.",
-      "Skip it — if they haven't brought it up, they're probably not interested.",
-      "Leaving time at the end of the call, casually steer the conversation: \"There's one other thing I wanted to mention — I noticed you have a financing offer available through Stripe Capital. I just wanted to make sure you were aware of it.\" Then pause and let them respond.",
-      "Send a follow-up email after the call with the offer details so you don't interrupt the conversation.",
-    ],
-    feedback: [
-      { title: "Incorrect approach.", body: "Financing should never be the opening topic or primary focus of a call. It belongs at the end, woven in naturally — not front and center." },
-      { title: "Miss an opportunity.", body: "Part of your job is ensuring Pros know the offer exists. Skipping it entirely because they didn't bring it up means leaving awareness on the table." },
-      { title: "Correct.", body: "This is the right approach: leave time at the end of a natural call, use a casual transition, then pause and let the Pro's response determine the path. Don't force it — surface it." },
-      { title: "Not the right channel.", body: "The program is designed around live call conversations, not follow-up emails. You lose the ability to qualify the conversation, answer questions, and capture intent in real time." },
-    ],
-  },
-  {
-    cat: "role",
-    scenario: "A Pro pushes back and says: \"You're basically just trying to sell me a loan.\" You respond...",
-    correct: 1,
-    choices: [
-      "You're right, it is a loan — but it's a really good one with no interest.",
-      "I hear you, and I want to be clear — I'm not here to sell you anything and HCP isn't a lender. I'm just making sure you know the offer exists. Whether it makes sense for your business is completely your call.",
-      "It's not a loan, it's working capital — there's a big difference.",
-      "I understand, but just hear me out — a lot of Pros have found it really helpful.",
-    ],
-    feedback: [
-      { title: "Incorrect.", body: "Stripe's Flex Loan and Fixed Term products technically are loans. But more importantly, this response doesn't address the Pro's actual concern about being sold to." },
-      { title: "Correct.", body: "This directly addresses the pushback. You are not a salesperson, HCP is not a lender, and the decision is entirely the Pro's. Restating your role defuses the tension without being defensive." },
-      { title: "Gets into semantics, misses the point.", body: "Whether to call it a loan or working capital matters less than addressing why the Pro feels sold to. Redirect to your role: awareness only, their decision entirely." },
-      { title: "Sounds like a sales pitch.", body: "\"Just hear me out\" and leading with social proof is exactly the sales energy the Pro is reacting to. Acknowledge their concern and restate your role instead." },
-    ],
-  },
-  {
-    cat: "credit",
-    scenario: "A Pro with a Stripe offer asks: \"I have good credit — I don't want anything messing with it. Is it safe to apply?\"",
-    correct: 1,
-    choices: [
-      "Yes, totally safe — Stripe never touches your credit, guaranteed.",
-      "Applying won't affect your credit score. There may be a check under some circumstances, but it doesn't impact your score — and if it does happen, you'll be notified during the application.",
-      "It depends on your credit score. The higher it is, the less likely any check occurs.",
-      "I can't speak to that — you'd need to check with Stripe directly before applying.",
-    ],
-    feedback: [
-      { title: "Too absolute — avoid this.", body: "A blanket guarantee is risky. Stripe's FAQ notes a check may occur under some circumstances. You can be reassuring without overpromising." },
-      { title: "Correct.", body: "This is accurate and reassuring without overpromising. Applying doesn't affect the credit score, a check may occur in some circumstances but won't hurt their score, and the Pro will be notified if it does happen." },
-      { title: "Incorrect.", body: "Stripe's FAQ doesn't suggest the check threshold varies by credit score. The trigger is unspecified circumstances — not the Pro's score level." },
-      { title: "Undersells your knowledge.", body: "You do have accurate information to share here. Deferring entirely when you can give a clear, reassuring answer makes you seem unprepared and unhelpful." },
-    ],
-  },
+  { cat:"stripe", scenario:"A Pro with a Stripe Flex Loan asks: \"What happens if my sales are slow and I don't hit my minimum payment?\"", correct:1, choices:["There's no minimum — you just pay whatever percentage comes through naturally.","Stripe will automatically debit the remaining minimum from your linked bank account at the end of the period.","Your loan will go into default and Stripe will contact you.","Nothing happens — the minimum just carries over to the next period."], feedback:[{title:"Incorrect — that describes the MCA.",body:"The MCA has no minimums. The Flex Loan does have minimums per period, and there is a consequence for not meeting them."},{title:"Correct.",body:"For Stripe Flex Loans, if per-transaction withholdings don't cover the minimum, Stripe will automatically debit the remaining amount from the linked bank account at end of period. Important for setting accurate expectations."},{title:"Too strong.",body:"A missed minimum doesn't trigger default — Stripe automatically debits the shortfall from the linked bank account. Calling it a default overstates the consequence."},{title:"Incorrect.",body:"Minimums don't carry over. Stripe debits the shortfall from the linked bank account at the end of the minimum payment period."}] },
+  { cat:"stripe", scenario:"A Pro asks: \"Will applying for Stripe Capital hurt my credit score?\"", correct:2, choices:["No, Stripe Capital never does any kind of credit check.","Yes, applying will show up as a hard inquiry on your credit.","Applying won't affect your credit score — but in some circumstances a check may occur, and you'll be notified if that happens.","It depends on your credit score. If it's above 600, no impact."], feedback:[{title:"Too absolute — avoid this.",body:"While applying typically doesn't impact credit, Stripe Capital states a check might occur under some circumstances. Never make blanket guarantees about credit."},{title:"Incorrect.",body:"Applying for Stripe Capital does not result in a hard inquiry that hurts your score. Even if a check occurs, it does not affect the personal credit score."},{title:"Correct.",body:"Applying might include a personal credit check under some circumstances, but this does not affect the personal credit score. If a check is required, the Pro will be notified during the application."},{title:"Incorrect.",body:"Stripe Capital's qualification isn't based on a credit score threshold. A check may happen in some circumstances regardless, and it won't affect their score either way."}] },
+  { cat:"pipe", scenario:"A Pro asks: \"What makes Pipe different from Stripe Capital?\"", correct:0, choices:["Pipe is a revenue-based cash advance with multi-draw flexibility — you can access as much or as little of your offer as needed, and payments are a percentage of revenue debited from your bank account.","Pipe is a revolving line of credit, similar to a business credit card.","Pipe is identical to Stripe Capital — both are flat-fee working capital products.","Pipe requires a credit check and personal guarantee, unlike Stripe."], feedback:[{title:"Correct.",body:"Pipe is a revenue-based MCA with multi-draw flexibility. You access what you need, payments scale with revenue, and there are no credit checks or personal collateral required."},{title:"That describes Fundbox.",body:"A revolving line of credit is Fundbox's product. Pipe is a revenue-based cash advance — not revolving credit."},{title:"Incorrect.",body:"While both have flat fees and revenue-based repayment, Pipe is a cash advance (MCA) with multi-draw capability, while Stripe offers loans and MCAs with different structures."},{title:"Incorrect.",body:"Pipe explicitly has no credit checks and no personal collateral. Approval is based purely on business revenue data."}] },
+  { cat:"pipe", scenario:"A Pro with a $100k Pipe offer only wants to take $40k. Can they do that?", correct:1, choices:["No — Pipe requires you to take the full offer amount at once.","Yes — Pipe lets you draw as much or as little as you need. Your payment rate adjusts to match the amount you advance.","Yes — but only if you draw at least 50% of the offer.","It depends on whether the offer has expired."], feedback:[{title:"Incorrect.",body:"Pipe does not require taking the full offer. One of its key advantages is flexibility — you draw what you need, and fees and payment rates adjust accordingly."},{title:"Correct.",body:"Pipe lets you advance as much or as little as you want. For example, with a $100k limit at 10%, if you only take $50k your rate adjusts to 5%. This flexibility is a strong selling point."},{title:"Incorrect.",body:"There is no minimum draw requirement. The Pro can take any amount up to their offer limit."},{title:"Partially true but misleading.",body:"Offers do expire, but that's not what determines whether partial draws are allowed. Partial draws are always allowed while the offer is active."}] },
+  { cat:"pipe", scenario:"A Pro with a Pipe offer asks: \"Does Pipe do a credit check, and will it affect me if I apply?\"", correct:2, choices:["Yes, Pipe runs a soft credit check during the application — but it won't affect your score.","It depends on your state and business history.","No — Pipe does not do any credit checks and requires no personal guarantee. Offers are based purely on your business revenue data.","There's no credit check to apply, but there is a hard pull when you draw funds for the first time."], feedback:[{title:"Incorrect.",body:"Pipe does not run any credit check — not soft, not hard. This is a key differentiator worth knowing and sharing confidently."},{title:"Incorrect.",body:"Pipe's FAQ makes no mention of state-based variation. There is simply no credit check, regardless of location or business history."},{title:"Correct.",body:"Pipe has no credit checks and no personal guarantees. Offers are based purely on business revenue data — historical transactions, projected revenue, and payment processing volume."},{title:"That describes Fundbox, not Pipe.",body:"The hard-pull-at-first-draw structure applies to Fundbox. Pipe has no credit check of any kind."}] },
+  { cat:"fundbox", scenario:"A Pro asks what kind of product Fundbox offers. Which best describes it?", correct:1, choices:["A flat-fee cash advance based on your HCP payment history.","A revolving line of credit — you draw what you need, repay in weekly installments, and available credit replenishes as you pay.","A fixed term loan with monthly payments over 12 or 24 months.","A revenue-based advance with no set repayment schedule."], feedback:[{title:"That describes Stripe/Pipe.",body:"Fundbox is not a cash advance. It is a revolving line of credit — a meaningfully different product structure."},{title:"Correct.",body:"Fundbox is a revolving line of credit. You draw funds as needed, repay in weekly installments over 12 or 24 weeks, and as you repay, that credit becomes available again. No origination fees, no prepayment penalties."},{title:"Close but incorrect details.",body:"Fundbox repayment is weekly installments over 12 or 24 weeks — not monthly payments over 12 or 24 months. The timeframes are weeks, not months."},{title:"That describes Pipe.",body:"Revenue-based repayment with no fixed schedule is Pipe's structure. Fundbox has a structured weekly repayment schedule."}] },
+  { cat:"fundbox", scenario:"A Pro asks about Fundbox eligibility. What are the ideal eligibility requirements you'd share with them?", correct:0, choices:["Fundbox looks for 6+ months in business, $100k+ in annual revenue, and a personal credit score above 600.","Fundbox only looks at HCP payment volume — no credit score needed.","Fundbox requires 12+ months in business and $250k in annual revenue.","There are no stated eligibility requirements — any Pro can apply."], feedback:[{title:"Correct.",body:"Fundbox's ideal candidate has 6+ months in business, $100,000+ in annual revenue, and a personal credit score above 600. Unlike Stripe and Pipe, Fundbox does consider personal credit — important context when routing Pros."},{title:"Incorrect.",body:"Unlike Stripe and Pipe, Fundbox does factor in personal credit score (600+). This is an important distinction when routing Pros to the right product."},{title:"Incorrect thresholds.",body:"The stated requirements are 6+ months (not 12+) and $100k in annual revenue (not $250k). Getting this wrong could discourage an eligible Pro from applying."},{title:"Incorrect.",body:"Fundbox does have stated eligibility criteria. Knowing them helps set accurate expectations and route the right Pros to the right product."}] },
+  { cat:"fundbox", scenario:"A Pro considering applying for a Fundbox line of credit asks: \"Will applying impact my credit score?\"", correct:2, choices:["Yes, Fundbox runs a hard credit inquiry at application.","No, there are no credit inquiries of any kind with Fundbox.","Applying does not impact your credit score. However, Fundbox will make a one-time hard credit inquiry the first time you draw funds.","It depends on your credit score — if it's above 700, no hard pull is needed."], feedback:[{title:"Incorrect.",body:"Applying itself does not impact credit. The hard inquiry happens later — specifically the first time the Pro draws funds."},{title:"Incomplete.",body:"There is a hard credit inquiry — but it happens at first draw, not at application. The distinction matters and should be shared accurately."},{title:"Correct.",body:"Applying does not impact credit score. Fundbox makes a one-time hard credit inquiry only when funds are drawn for the first time. Be precise about when this happens — it matters to the Pro."},{title:"Incorrect.",body:"Fundbox's FAQ does not tie the hard pull to a credit score threshold. The trigger is drawing funds for the first time, regardless of score."}] },
+  { cat:"fundbox", scenario:"How quickly can a Pro expect a credit decision from Fundbox after applying?", correct:1, choices:["Within 1-2 business days, same as Stripe.","As few as 3 minutes, with funds available as soon as the next business day if approved.","Fundbox typically takes 24-48 hours for a credit decision.","Instantly — Fundbox approvals are automated and immediate."], feedback:[{title:"Incorrect.",body:"1-2 business days is Stripe Capital's fund delivery timeframe, not Fundbox's decision time. Fundbox makes credit decisions in as few as 3 minutes."},{title:"Correct.",body:"Fundbox makes credit decisions in as few as 3 minutes, with funds available as soon as the next business day if approved. Speed is one of Fundbox's key advantages."},{title:"Incorrect.",body:"Fundbox is faster than 24-48 hours — decisions can come in as few as 3 minutes. Misstating this undersells a key benefit."},{title:"Overstates it.",body:"While Fundbox is fast (as few as 3 minutes), calling it instant is inaccurate. Funds also aren't available immediately — they can arrive as soon as the next business day."}] },
+  { cat:"compare", scenario:"A Pro doesn't have a Stripe or Pipe offer. What should you tell them about their options?", correct:2, choices:["They're out of luck until they receive a Stripe or Pipe offer — those are the primary products.","They should wait and check back in 30 days when offers refresh.","Fundbox is available to any Pro who applies and meets eligibility criteria — it doesn't require a prequalified offer like Stripe or Pipe.","They need to increase their HCP payment volume before any offer will appear."], feedback:[{title:"Incorrect and unhelpful.",body:"Fundbox is specifically positioned for Pros who don't have a Stripe or Pipe offer. Telling a Pro they're out of luck misses a live option."},{title:"Misleading.",body:"Stripe offers expire after 30 days and are automatically re-evaluated, but this doesn't apply to Fundbox, which any eligible Pro can apply for proactively."},{title:"Correct.",body:"Fundbox is available to any Pro who doesn't have a Stripe/Pipe offer but still needs capital. It's the proactive-apply option — no prequalified offer required."},{title:"Partially true but not actionable.",body:"While payment volume does affect Stripe/Pipe eligibility, a Pro doesn't have to wait — they can apply for Fundbox now if they meet the criteria."}] },
+  { cat:"approval", scenario:"A Pro with a Stripe/Pipe offer says: \"Wait, so I'm already approved?\" You respond...", correct:0, choices:["You're prequalified for up to $XXXX — meaning you're eligible to apply, but final approval happens after you submit the application.","Yes, you're approved for $XXXX. You just need to accept.","You're approved pending a few verification steps.","Think of it as approved — they just need to confirm a few details."], feedback:[{title:"Correct.",body:"Pros are prequalified, not approved. Final approval happens after application. Using approved language when they aren't yet is inaccurate and a compliance risk."},{title:"Never say this.",body:"Pros are not currently approved — they still need to apply and receive final approval. Saying 'you're approved' when they aren't is a compliance violation."},{title:"Still too strong.",body:"'Approved pending verification' still implies approval has already occurred. Use prequalified language to set accurate expectations."},{title:"Avoid this framing.",body:"Telling a Pro to 'think of it as approved' is misleading. They are not approved. Use precise language: prequalified, eligible to apply, subject to final approval."}] },
+  { cat:"lender", scenario:"A Pro asks: \"Is HCP the one giving me this money?\"", correct:1, choices:["Yes, HCP built these financing products into the platform for you.","No — HCP is neither the lender nor broker. This offer is through HCP's partnership with [Stripe Capital / Pipe / Fundbox]. Our partnership is what makes the offer available to you.","HCP works with financial partners to offer you money through the app.","Sort of — HCP and the partner split the financing."], feedback:[{title:"Incorrect and non-compliant.",body:"HCP is neither the lender nor broker. Implying HCP built or owns the financing product misrepresents the relationship and is a compliance issue."},{title:"Correct.",body:"HCP is neither the lender nor broker — it's the partner relationship that makes the offer available. Always name the actual lender: Stripe Capital, Pipe, or Fundbox."},{title:"Too vague.",body:"This avoids saying HCP is the lender, which is good. But it doesn't name the actual lender. Pros deserve to know exactly who they're working with."},{title:"Incorrect.",body:"HCP and the partner do not split the financing. HCP is not a lender at all. The partner (Stripe, Pipe, or Fundbox) is the sole source of capital."}] },
+  { cat:"funds", scenario:"A Pro asks: \"Can I use this to pay off some personal debt?\"", correct:2, choices:["Sure — it's flexible working capital, you can use it however you need.","Probably fine, as long as it's a small amount.","No — these funds are specifically for business use only. You can use them for things like equipment, payroll, or managing cash flow.","That's a question for the lender — I'd check with Stripe/Pipe/Fundbox directly."], feedback:[{title:"Incorrect — avoid this.",body:"These funds are strictly for business purposes. Telling a Pro they can use them for personal debt is inaccurate and potentially harmful."},{title:"Never say this.",body:"There is no 'small amount' exception. Business financing is for business use only, full stop."},{title:"Correct.",body:"Business financing can only be used for business purposes — equipment, hiring, inventory, cash flow, etc. Never suggest personal use is acceptable, and be direct when a Pro asks."},{title:"Passes the buck unnecessarily.",body:"You know the answer here — business use only. Deferring to the lender for a basic use-of-funds question makes you seem uninformed and doesn't protect the Pro."}] },
+  { cat:"pressure", scenario:"A Pro says: \"I'm not sure I need the full amount.\" You say...", correct:1, choices:["You should really take the full amount — it's there and there's no cost to having it available.","That's completely fine — you can take up to $XXXX, or less if you choose. It's entirely your call.","I'd take the full amount just in case — you never know when you'll need extra cash.","The offer amount was set based on your revenue, so it's probably the right amount for your business."], feedback:[{title:"Never say this.",body:"Pressuring a Pro to take the full amount is explicitly against program rules. Your role is to inform, not to push a dollar amount."},{title:"Correct.",body:"Pros are never required to take the full offer and should never be pressured to. Make clear the decision — including how much to take — is entirely theirs."},{title:"Never say this.",body:"Recommending they take more than they need puts your interests over theirs and violates the spirit of the program. Never advise the Pro on what amount to take."},{title:"Subtle pressure — avoid it.",body:"Framing the offer amount as what's right for their business is a soft push. You don't know what's right for their business. Let them decide without steering."}] },
+  { cat:"natural", scenario:"You're nearing the end of a routine check-in call. The Pro hasn't mentioned money at all. You notice they have an open Stripe offer. What do you do?", correct:2, choices:["Lead the next call with the financing offer — give it dedicated focus so the Pro takes it seriously.","Skip it — if they haven't brought it up, they're probably not interested.","Leaving time at the end of the call, casually steer the conversation: \"There's one other thing I wanted to mention — I noticed you have a financing offer available through Stripe Capital. I just wanted to make sure you were aware of it.\" Then pause and let them respond.","Send a follow-up email after the call with the offer details so you don't interrupt the conversation."], feedback:[{title:"Incorrect approach.",body:"Financing should never be the opening topic or primary focus of a call. It belongs at the end, woven in naturally — not front and center."},{title:"Miss an opportunity.",body:"Part of your job is ensuring Pros know the offer exists. Skipping it entirely because they didn't bring it up means leaving awareness on the table."},{title:"Correct.",body:"This is the right approach: leave time at the end of a natural call, use a casual transition, then pause and let the Pro's response determine the path. Don't force it — surface it."},{title:"Not the right channel.",body:"The program is designed around live call conversations, not follow-up emails. You lose the ability to qualify the conversation, answer questions, and capture intent in real time."}] },
+  { cat:"role", scenario:"A Pro pushes back and says: \"You're basically just trying to sell me a loan.\" You respond...", correct:1, choices:["You're right, it is a loan — but it's a really good one with no interest.","I hear you, and I want to be clear — I'm not here to sell you anything and HCP isn't a lender. I'm just making sure you know the offer exists. Whether it makes sense for your business is completely your call.","It's not a loan, it's working capital — there's a big difference.","I understand, but just hear me out — a lot of Pros have found it really helpful."], feedback:[{title:"Incorrect.",body:"Stripe's Flex Loan and Fixed Term products technically are loans. But more importantly, this response doesn't address the Pro's actual concern about being sold to."},{title:"Correct.",body:"This directly addresses the pushback. You are not a salesperson, HCP is not a lender, and the decision is entirely the Pro's. Restating your role defuses the tension without being defensive."},{title:"Gets into semantics, misses the point.",body:"Whether to call it a loan or working capital matters less than addressing why the Pro feels sold to. Redirect to your role: awareness only, their decision entirely."},{title:"Sounds like a sales pitch.",body:"\"Just hear me out\" and leading with social proof is exactly the sales energy the Pro is reacting to. Acknowledge their concern and restate your role instead."}] },
+  { cat:"credit", scenario:"A Pro with a Stripe offer asks: \"I have good credit — I don't want anything messing with it. Is it safe to apply?\"", correct:1, choices:["Yes, totally safe — Stripe never touches your credit, guaranteed.","Applying won't affect your credit score. There may be a check under some circumstances, but it doesn't impact your score — and if it does happen, you'll be notified during the application.","It depends on your credit score. The higher it is, the less likely any check occurs.","I can't speak to that — you'd need to check with Stripe directly before applying."], feedback:[{title:"Too absolute — avoid this.",body:"A blanket guarantee is risky. Stripe's FAQ notes a check may occur under some circumstances. You can be reassuring without overpromising."},{title:"Correct.",body:"This is accurate and reassuring without overpromising. Applying doesn't affect the credit score, a check may occur in some circumstances but won't hurt their score, and the Pro will be notified if it does happen."},{title:"Incorrect.",body:"Stripe's FAQ doesn't suggest the check threshold varies by credit score. The trigger is unspecified circumstances — not the Pro's score level."},{title:"Undersells your knowledge.",body:"You do have accurate information to share here. Deferring entirely when you can give a clear, reassuring answer makes you seem unprepared and unhelpful."}] },
 ];
 
 const TOTAL = Qs.length;
 let current = 0;
 let selected = null;
 let answered = [];
+let repName = "";
+let repEmail = "";
+let quizStarted = false;
+
+function renderStart() {
+  const card = document.getElementById('quiz-card');
+  card.innerHTML = `
+    <div class="start-title">AM Financing Certification Quiz</div>
+    <div class="start-desc">This quiz tests your knowledge of HCP's three lending partners — Stripe Capital, Pipe, and Fundbox — and the do's and don'ts for surfacing financing offers on calls.</div>
+    <div class="start-meta">
+      <div class="start-meta-item"><strong>17</strong> questions</div>
+      <div class="start-meta-item"><strong>~10 min</strong> to complete</div>
+      <div class="start-meta-item"><strong>80%+</strong> to pass</div>
+    </div>
+    <div class="field-row">
+      <div>
+        <label for="rep-name">Your name</label>
+        <input type="text" id="rep-name" placeholder="First and last name" />
+      </div>
+      <div>
+        <label for="rep-email">Your work email</label>
+        <input type="email" id="rep-email" placeholder="you@housecallpro.com" />
+      </div>
+    </div>
+    <button class="btn" onclick="startQuiz()">Start quiz</button>
+  `;
+}
+
+function startQuiz() {
+  const nameEl = document.getElementById('rep-name');
+  const emailEl = document.getElementById('rep-email');
+  repName = nameEl ? nameEl.value.trim() : "";
+  repEmail = emailEl ? emailEl.value.trim() : "";
+  if (!repName || !repEmail) {
+    alert("Please enter your name and email before starting.");
+    return;
+  }
+  quizStarted = true;
+  render();
+}
 
 function render() {
+  if (!quizStarted) { renderStart(); return; }
   const card = document.getElementById('quiz-card');
   if (current >= TOTAL) { renderResults(card); return; }
 
@@ -454,44 +236,82 @@ function next() {
   render();
 }
 
+async function submitScore(score, pct, passed, missedTopics) {
+  const btn = document.getElementById('submit-btn');
+  const statusEl = document.getElementById('submit-status');
+  if (btn) { btn.disabled = true; btn.textContent = 'Submitting...'; }
+
+  const completedAt = new Date().toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' });
+
+  try {
+    const res = await fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        name: repName,
+        email: repEmail,
+        score: `${score} / ${TOTAL}`,
+        percentage: `${pct}%`,
+        passed: passed ? 'Yes' : 'No',
+        missed_topics: missedTopics.length > 0 ? missedTopics.join(', ') : 'None',
+        completed_at: completedAt,
+      })
+    });
+    if (res.ok) {
+      if (statusEl) statusEl.innerHTML = '<div class="submit-status success">Score submitted successfully.</div>';
+      if (btn) btn.style.display = 'none';
+    } else {
+      throw new Error('Failed');
+    }
+  } catch {
+    if (statusEl) statusEl.innerHTML = '<div class="submit-status error">Submission failed — please email your score manually.</div>';
+    if (btn) { btn.disabled = false; btn.textContent = 'Retry submission'; }
+  }
+}
+
 function renderResults(card) {
   const score = answered.filter(Boolean).length;
   const pct = Math.round(score / TOTAL * 100);
+  const passed = pct >= 80;
   const grade = pct === 100 ? { label: "Perfect — certified!", color: "#3B6D11", bg: "#EAF3DE" } :
     pct >= 80 ? { label: "Strong — a few gaps to review", color: "#185FA5", bg: "#E6F1FB" } :
     pct >= 60 ? { label: "Passing — revisit the misses", color: "#633806", bg: "#FAEEDA" } :
     { label: "Needs work — review and retry", color: "#A32D2D", bg: "#FCEBEB" };
 
-  const misses = Qs.map((q, i) => ({ q, i, correct: answered[i], chosen: answered[i] === false ? i : null }))
-    .filter(m => !m.correct);
+  const misses = Qs.filter((_, i) => !answered[i]);
+  const missedTopics = [...new Set(misses.map(q => CAT[q.cat].label))];
 
   const missHtml = misses.length === 0 ? '' : `
     <hr class="divider">
     <div class="section-title">Review these questions</div>
-    ${misses.map(({ q, i }) => {
-      const chosenIdx = Qs[i].choices.findIndex((_, ci) => ci !== Qs[i].correct && answered[i] === false);
-      return `<div class="miss-card">
+    ${misses.map(q => `
+      <div class="miss-card">
         <div class="cat-badge" style="background:${CAT[q.cat].bg};color:${CAT[q.cat].color};margin-bottom:8px">${CAT[q.cat].label}</div>
         <div class="miss-scenario">${q.scenario}</div>
         <div class="miss-best"><strong>Best answer:</strong> ${q.choices[q.correct]}</div>
-      </div>`;
-    }).join('')}`;
+      </div>`).join('')}`;
 
   card.innerHTML = `
-    <div style="font-size:13px;color:#888;margin-bottom:4px">Final score</div>
+    <div style="font-size:13px;color:#888;margin-bottom:4px">Final score — ${repName}</div>
     <div class="score-num">${score} / ${TOTAL}</div>
     <div class="grade-badge" style="background:${grade.bg};color:${grade.color}">${grade.label}</div>
     ${missHtml}
+    <hr class="divider">
+    <div class="submit-section">
+      <p>Submit your score so your manager can track your completion.</p>
+      <button class="btn" id="submit-btn" onclick="submitScore(${score}, ${pct}, ${passed}, ${JSON.stringify(missedTopics)})">Submit my score</button>
+      <div id="submit-status"></div>
+    </div>
     <button class="btn-outline" onclick="restart()">Retake quiz</button>
   `;
 }
 
 function restart() {
-  current = 0; selected = null; answered = [];
-  render();
+  current = 0; selected = null; answered = []; quizStarted = false;
+  renderStart();
 }
 
-render();
+renderStart();
 </script>
 </body>
 </html>
